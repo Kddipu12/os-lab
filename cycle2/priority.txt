@@ -1,0 +1,22 @@
+Step 1: Define a struct proc to store the details of each process such as process number (no), arrival time (at), burst time (bt), remaining time (rt), completion time (ct), waiting time (wt), turnaround time (tat), priority (pri) and a temporary variable to store the original priority (temp).
+
+Step 2: Define a function read to read the details of each process and return a struct proc object.
+
+Step 3: Define the main function to implement the HPF algorithm.
+
+Step 4: Read the number of processes and their details using the read function and store them in an array of struct proc objects.
+
+Step 5: Sort the array of struct proc objects in ascending order of arrival time using a bubble sort algorithm.
+
+Step 6: Initialize remaining to the total number of processes and max_val to the minimum value possible for an integer.
+
+Step 7: Find the index of the process with the highest priority among the processes that have arrived till now and update max_val and max_index accordingly.
+
+Step 8: Assign the CPU to the process with the highest priority and decrement its remaining time.
+
+Step 9: If the remaining time of the process becomes zero, mark it as completed and decrement remaining.
+
+Step 10: Repeat steps 7-9 until all processes are completed.
+
+Step 11: Calculate the waiting time, turnaround time and average waiting time, average turnaround time for each process and print the output.
+
