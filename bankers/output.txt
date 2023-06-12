@@ -1,53 +1,113 @@
-DEADLOCK BANKERÔÇÖS ALGORITHM
-Enter the number of processes: 3
+
+DEADLOCK BANKER’S ALGORITHM
+Enter the number of processes: 5
 Enter the number of resources: 3
 Enter the allocated resources for each process:
 
 Process 0
-Resource 0: 4
-Resource 1: 2
-Resource 2: 1
+Resource 0: 0
+Resource 1: 1
+Resource 2: 0
 
 Process 1
-Resource 0: 1
-Resource 1: 2
-Resource 2: 3
+Resource 0: 2
+Resource 1: 0
+Resource 2: 0
 
 Process 2
 Resource 0: 3
-Resource 1: 2
+Resource 1: 0
+Resource 2: 2
+
+Process 3
+Resource 0: 2
+Resource 1: 1
 Resource 2: 1
+
+Process 4
+Resource 0: 0
+Resource 1: 0
+Resource 2: 2
 Enter the maximum resources that are needed for each process:
 
 Process 0
-Resource 0: 5
-Resource 1: 3
-Resource 2: 2
+Resource 0: 7
+Resource 1: 5
+Resource 2: 3
 
 Process 1
-Resource 0: 2
-Resource 1: 4
-Resource 2: 5
+Resource 0: 3
+Resource 1: 2
+Resource 2: 2
 
 Process 2
-Resource 0: 5
-Resource 1: 5
-Resource 2: 5
-Enter the currently available resources in the system:
+Resource 0: 9
+Resource 1: 0
+Resource 2: 2
+
+Process 3
 Resource 0: 2
-Resource 1: 4
-Resource 2: 5
+Resource 1: 2
+Resource 2: 2
+
+Process 4
+Resource 0: 4
+Resource 1: 3
+Resource 2: 3
+Enter the currently available resources in the system:
+Resource 0: 3
+Resource 1: 3
+Resource 2: 2
 
 OUTPUT:
 ========
 PROCESS      ALLOCATED       MAXIMUM         NEED
-P1           4  2  1         5  3  2         1  1  1
-P2           1  2  3         2  4  5         1  2  2
-P3           3  2  1         5  5  5         2  3  4
-The sequence of the safe processes are:
-P1 P2 P3
-The sequence of unsafe processes are:
-P0 P1 P2
+P1           0  1  0         7  5  3         7  4  3  
+P2           2  0  0         3  2  2         1  2  2  
+P3           3  0  2         9  0  2         6  0  0  
+P4           2  1  1         2  2  2         0  1  1  
+P5           0  0  2         4  3  3         4  3  1  
+The sequence of the safe processes are: 
+P2 P4 P5 P1 P3 
+The sequence of unsafe processes are: 
+P0 P1 P2 P3 P4 
 RESULT:
 =======
-The system is in a safe state, and deadlock will not occur!
+The system is in a safe state, and deadlock will not occur!mec@cc-2-2:~/KrishCS4A/bankers$ ./a.out
+DEADLOCK BANKER’S ALGORITHM
+Enter the number of processes: 2
+Enter the number of resources: 2
+Enter the allocated resources for each process:
+
+Process 0
+Resource 0: 0
+Resource 1: 1
+
+Process 1
+Resource 0: 2
+Resource 1: 0
+Enter the maximum resources that are needed for each process:
+
+Process 0
+Resource 0: 2
+Resource 1: 2
+
+Process 1
+Resource 0: 3
+Resource 1: 3
+Enter the currently available resources in the system:
+Resource 0: 0
+Resource 1: 0
+
+OUTPUT:
+========
+PROCESS      ALLOCATED       MAXIMUM         NEED
+P1           0  1            2  2            2  1  
+P2           2  0            3  3            1  3  
+The sequence of the safe processes are: 
+
+The sequence of unsafe processes are: 
+P0 P1 
+RESULT:
+=======
+The system is not in a safe state, and deadlock may occur!mec@cc-2-2:~/KrishCS4A/bankers$ ^C
